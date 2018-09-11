@@ -1,44 +1,66 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Character name:</strong>
-  <%= @character.character_name %>
-</p>
+<div class="container">
+  <div class="row border bg-warning">
+    <div class="col-sm-4">
+      <div class="row">
+        <div class="col-sm-12 border">
+          <center><img src="https://via.placeholder.com/250x300?text=Portait"></center>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 border">
+          <strong>Age:</strong>
+          <%= @character.age %>
+        </div>
+        <div class="col-sm-6 border">
+          <strong>Gender:</strong>
+          <%= @character.gender %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 border">
+          <strong>Eyes:</strong>
+          <%= @character.eyes %>
+        </div>
+        <div class="col-sm-6 border">
+          <strong>Hair:</strong>
+          <%= @character.hair %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 border">
+          <strong>Height:</strong>
+          <%= @character.height %>
+        </div>
+        <div class="col-sm-6 border">
+          <strong>Weight:</strong>
+          <%= @character.weight %>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8 border">
+      <div class="row">
+        <div class="col-sm-6 border">
+          <strong>Character name:</strong>
+          <%= @character.character_name %>
+        </div>
+        <div class="col-sm-6 border bg-secondary">
+          <strong>Player name:</strong>
+          <%= @character.player_name %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 border h-100">
+          <strong>Description:</strong>
+          <%= @character.description %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Player name:</strong>
-  <%= @character.player_name %>
-</p>
-
-<p>
-  <strong>Age:</strong>
-  <%= @character.age %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @character.gender %>
-</p>
-
-<p>
-  <strong>Eyes:</strong>
-  <%= @character.eyes %>
-</p>
-
-<p>
-  <strong>Height:</strong>
-  <%= @character.height %>
-</p>
-
-<p>
-  <strong>Hair:</strong>
-  <%= @character.hair %>
-</p>
-
-<p>
-  <strong>Weight:</strong>
-  <%= @character.weight %>
-</p>
+<p>Not Done yet</p>
 
 <p>
   <strong>Gear:</strong>
@@ -51,8 +73,7 @@
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @character.description %>
+ 
 </p>
 
 <p>
