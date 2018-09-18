@@ -4,10 +4,16 @@
   <div class="row border" style="height: 900px;">
     <div class="col-sm-5 mx-5 h-100">
       <div class="row" style="background-color: #efe3c4; height: 48%; margin-bottom: 4%;">
-        <div class="col-sm-12"></div>
+        <div class="col-sm-12">
+          <strong>Gear:</strong>
+          <%= @character.gear %>
+        </div>
       </div>
       <div class="row" style="background-color: #d8abab; height: 48%;">
-        <div class="col-sm-12"></div>
+        <div class="col-sm-12">
+          <strong>Concept:</strong>
+          <%= @character.concept %>
+        </div>
       </div>
     </div>
     <div class="col-sm-5 h-100 text-center">
@@ -326,14 +332,18 @@
       <div class="row" style="background-color: #FBD9B9; height: 48%; margin-bottom: 4%;">
         <div class="col-sm-12">
           <div class="row">
-            <div class="col-sm-12"><h3>History</h3></div>
+            <div class="col-sm-12"><h3>History</h3>
+              <%= @character.history %>
+            </div>
           </div>
         </div>
       </div>
       <div class="row" style="background-color: #FFFCED; height: 48%;">
         <div class="col-sm-12">
           <div class="row">
-            <div class="col-sm-12"><h3>Crossroads</h3></div>
+            <div class="col-sm-12"><h3>Crossroads</h3>
+              <%= @character.crossroads %>
+            </div>
           </div>
         </div>
       </div>
@@ -342,7 +352,9 @@
       <div class="row h-100">
         <div class="col-sm-12 border h-100">
           <div class="row">
-            <div class="col-sm-12"><h3>Notes</h3></div>
+            <div class="col-sm-12"><h3>Notes</h3>
+              <%= @character.notes %>
+            </div>
           </div>
         </div>
       </div>
@@ -350,46 +362,6 @@
   </div>
 </div>
 
-<p>Not Done yet</p>
-
-<p>
-  <strong>Gear:</strong>
-  <%= @character.gear %>
-</p>
-
-<p>
-  <strong>Concept:</strong>
-  <%= @character.concept %>
-</p>
-
-<p>
- 
-</p>
-
-<p>
-  <strong>Background:</strong>
-  <%= @character.background %>
-</p>
-
-<p>
-  <strong>Race:</strong>
-  <%= @character.race %>
-</p>
-
-<p>
-  <strong>History:</strong>
-  <%= @character.history %>
-</p>
-
-<p>
-  <strong>Crossroads:</strong>
-  <%= @character.crossroads %>
-</p>
-
-<p>
-  <strong>Notes:</strong>
-  <%= @character.notes %>
-</p>
 
 <%= link_to 'Edit', edit_character_path(@character) %> |
 <%= link_to 'Back', characters_path %>
