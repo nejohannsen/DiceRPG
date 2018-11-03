@@ -19,6 +19,9 @@ class CharactersController < ApplicationController
 
   # GET /characters/1/edit
   def edit
+    @conceptProwess = Prowess.new
+    @raceProwess = Prowess.new
+    @backgroundProwess = Prowess.new
   end
 
   # POST /characters

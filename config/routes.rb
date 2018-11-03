@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :backgrounds
+  resources :races
+  resources :concepts
+  resources :prowesses
   devise_for :users
 	root 'welcome#index'
   	resources :characters

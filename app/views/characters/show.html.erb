@@ -3,21 +3,24 @@
 <div class="container-fluid">
   <div class="row border" style="height: 900px;">
     <div class="col-sm-5 mx-5 h-100">
-      <div class="row" style="background-color: #efe3c4; height: 48%; margin-bottom: 4%;">
+      <div class="row" style="height: 60%; margin-top: 1%;">
+        <div class="col-sm-12 border h-100">
+          <div class="row">
+            <div class="col-sm-12"><h3>Notes</h3>
+              <%= @character.notes %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="background-color: #efe3c4; height: 35%; margin-top: 4%;">
         <div class="col-sm-12">
           <strong>Gear:</strong>
           <%= @character.gear %>
         </div>
       </div>
-      <div class="row" style="background-color: #d8abab; height: 48%;">
-        <div class="col-sm-12">
-          <strong>Concept:</strong>
-          <%= @character.concept %>
-        </div>
-      </div>
     </div>
-    <div class="col-sm-5 h-100 text-center">
-      <div class="row bg-warning" style="height: 33%;">
+    <div class="col-sm-5 h-100">
+      <div class="row bg-warning" style="height: 35%; margin-top: 1%;">
         <div class="col-sm-4" style="font-size: smaller;">
           <div class="row" style="height: 55%">
             <div class="col-sm-12 border">
@@ -54,6 +57,7 @@
               <%= @character.weight %>
             </div>
           </div>
+          
         </div>
         <div class="col-sm-8 border">
           <div class="row">
@@ -74,7 +78,163 @@
           </div>
         </div>
       </div>
-      <div class="row bg-secondary text-center" style="height: 12%; margin-top: 3%">
+      <div class="row" style="background-color: #FBD9B9; height: 60%; margin-top: 4%;">
+        <div class="col-sm-12">
+          <div class="row">
+            <div class="col-sm-12"><h3>History</h3>
+              <%= @character.history %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row border" style="height: 900px;">
+    <div class="col-sm-5 mx-5 h-100">
+      <div class="row bg-primary mb-0 border" style="height: 15%;  margin-top: 1%">
+        <div class="col-sm-12">
+          <div class="row">
+            <h2>Prowess</h2>
+          </div>
+          <div class="row">
+            <div class="col-sm-8">
+              <table style="width: 100%;">
+                <tr>
+                  <td class="bg-white border text-center align-middle mx-1" style="width:16.6%">Concept</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">1</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">2</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">3</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">4</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">5</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">6</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">7</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">8</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">9</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">10</td>
+                </tr>
+                <tr>
+                  <td class="bg-white border text-center align-middle mx-1" style="width:16.6%">Bakground</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">1</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">2</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">3</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">4</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">5</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">6</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">7</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">8</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">9</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">10</td>
+                </tr>
+                <tr ">
+                  <td class="bg-white border text-center align-middle mx-1" style="width:16.6%">Race</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">1</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">2</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">3</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">4</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">5</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">6</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">7</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">8</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">9</td>
+                  <td class="bg-primary" style="width:.3%;"></td>
+                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">10</td>
+                </tr>
+              </table>
+            </div>
+              
+          </div>
+        </div>
+      </div>
+      <div class="row" style="background-color: #d8abab; height: 40%; margin-top: 3%">
+        <div class="col-sm-12">
+          <div class="row px-1" style="border-bottom: 1px solid #dee2e6;">
+            <div class="col-sm-3">
+              <h3>Concept:</h3>
+            </div>
+            <div class="col-sm-9">
+              <div class="row" style="padding-left: 5%;">
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row px-1">
+            <h4><%= @character.concept.title.nil? ? "Your Character's Concept Description" : @character.concept.title %>:</h4>
+          </div>
+          <div class="row px-1" style="padding-left: 3%; border-bottom: 1px solid #dee2e6;">
+            <%= @character.concept.description.nil? ? "Your Character's Concept Description" : @character.concept.description %>
+          </div>
+          <div class="row px-1">
+            <div class="col-sm-6">
+              <h5 class="p-0 m-0">Prowesses:</h5>
+            </div>
+          </div>
+          <div class="row px-1">
+            <div class="col-sm-12">
+              <%- if (!@character.concept.nil?) -%>
+                <%- @character.concept.prowesses.each do |prowess| -%>
+                  <div class="row">
+                  <span class="font-weight-bold"><%= prowess.title %>:</span>
+                  &nbsp;  
+                  <%= prowess.description %>
+                </div>
+                <% end %>
+              <% end %> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="background-color: #FFFCED; height: 40%; margin-top: 3%">
+        <div class="col-sm-12">
+          <div class="row">
+            <div class="col-sm-12"><h3>Crossroads</h3>
+              <%= @character.crossroads %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-5 h-100">
+      <div class="row bg-secondary text-center" style="height: 15%; margin-top: 1%">
         <div class="col-sm-12"> 
           <div class="row">
             <div class="col-sm-3 border font-weight-bold">Checks</div>
@@ -192,168 +352,100 @@
           </div>
         </div>
       </div>
-      <div class="row bg-primary mb-0" style="height: 17%; margin-top: 8%">
+      <div class="row" style="background-color: #d8abab; height: 40%; margin-top: 3%">
         <div class="col-sm-12">
-          <div class="row">
-            <h2>Prowess</h2>
-          </div>
-          <div class="row">
-            <div class="col-sm-8">
-              <table style="width: 100%;">
-                <tr>
-                  <td class="bg-white border text-center align-middle mx-1" style="width:16.6%">Concept</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">1</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">2</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">3</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">4</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">5</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">6</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">7</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">8</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">9</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">10</td>
-                </tr>
-                <tr>
-                  <td class="bg-white border text-center align-middle mx-1" style="width:16.6%">Bakground</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">1</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">2</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">3</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">4</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">5</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">6</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">7</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">8</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">9</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">10</td>
-                </tr>
-                <tr ">
-                  <td class="bg-white border text-center align-middle mx-1" style="width:16.6%">Race</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">1</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">2</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">3</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">4</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">5</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">6</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">7</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">8</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">9</td>
-                  <td class="bg-primary" style="width:.3%;"></td>
-                  <td class="bg-white border text-center align-middle text-secondary" style="width:8%">10</td>
-                </tr>
-              </table>
+          <div class="row px-1" style="border-bottom: 1px solid #dee2e6;">
+            <div class="col-sm-3">
+              <h3>Background</h3>
             </div>
-              
+            <div class="col-sm-9">
+              <div class="row" style="padding-left: 5%;">
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="row bg-primary" style="height: 30%;">
-        <div class="col-sm-6 bg-info">
-          <div class="row">
-            <h2>Background:</h2>
+          <div class="row px-1">
+            <h4><%= @character.background.title.nil? ? "Your Character's Background Title" : @character.background.description %></h4>
           </div>
-          <div class="row">
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
+          <div class="row px-1" style="padding-left: 3%; border-bottom: 1px solid #dee2e6;">
+            <%= @character.background.description.nil? ? "Your Character's Background Description" : @character.background.description %>
           </div>
-          <div class="row">
+          <div class="row px-1">
+            <div class="col-sm-6">
+              <h5 class="p-0 m-0">Prowesses:</h5>
+            </div>
+          </div>
+          <div class="row px-1">
             <div class="col-sm-12">
-              <%= @character.background %>
+              <%- if (!@character.background.nil?) -%>
+                <%- @character.background.prowesses.each do |prowess| -%>
+                  <div class="row">
+                  <span class="font-weight-bold"><%= prowess.title %>:</span>
+                  &nbsp;  
+                  <%= prowess.description %>
+                </div>
+                <% end %>
+              <% end %> 
             </div>
           </div>
         </div>
-        <div class="col-sm-6 bg-info">
-          <div class="row">
-            <h2>Race:</h2>
+      </div>
+      <div class="row" style="background-color: #d8abab; height: 40%; margin-top: 3%">
+        <div class="col-sm-12">
+          <div class="row px-1" style="border-bottom: 1px solid #dee2e6;">
+            <div class="col-sm-3">
+              <h3>Race</h3>
+            </div>
+            <div class="col-sm-9">
+              <div class="row" style="padding-left: 5%;">
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+                <div class="border rounded-circle" style="margin: 1.5%; height: 0px; width:5%;padding-bottom:4%;background-color:white"></div>
+              </div>
+            </div>
           </div>
-          <div class="row">
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
-            <div class="border rounded-circle" style="margin: 1%; height: 0px; width:4%;padding-bottom:4%;background-color:white"></div>
+          <div class="row px-1">
+            <h4><%= @character.race.title.nil? ? "Your Character's Race Title" : @character.race.description %></h4>
           </div>
-           <div class="row">
+          <div class="row px-1" style="padding-left: 3%; border-bottom: 1px solid #dee2e6;">
+            <%= @character.race.description.nil? ? "Your Character's Race Description" : @character.race.description %>
+          </div>
+          <div class="row px-1">
+            <div class="col-sm-6">
+              <h5 class="p-0 m-0">Prowesses:</h5>
+            </div>
+          </div>
+          <div class="row px-1">
             <div class="col-sm-12">
-              <%= @character.race %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row border" style="height: 900px;">
-    <div class="col-sm-5 mx-5 h-100">
-      <div class="row" style="background-color: #FBD9B9; height: 48%; margin-bottom: 4%;">
-        <div class="col-sm-12">
-          <div class="row">
-            <div class="col-sm-12"><h3>History</h3>
-              <%= @character.history %>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row" style="background-color: #FFFCED; height: 48%;">
-        <div class="col-sm-12">
-          <div class="row">
-            <div class="col-sm-12"><h3>Crossroads</h3>
-              <%= @character.crossroads %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-5 h-100">
-      <div class="row h-100">
-        <div class="col-sm-12 border h-100">
-          <div class="row">
-            <div class="col-sm-12"><h3>Notes</h3>
-              <%= @character.notes %>
+              <%- if (!@character.race.nil?) -%>
+                <%- @character.race.prowesses.each do |prowess| -%>
+                  <div class="row">
+                  <span class="font-weight-bold"><%= prowess.title %>:</span>
+                  &nbsp;  
+                  <%= prowess.description %>
+                </div>
+                <% end %>
+              <% end %> 
             </div>
           </div>
         </div>

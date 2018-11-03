@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_10_010652) do
+ActiveRecord::Schema.define(version: 2018_10_13_165020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "backgrounds", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "character_id"
+  end
 
   create_table "characters", force: :cascade do |t|
     t.string "character_name"
@@ -25,15 +33,38 @@ ActiveRecord::Schema.define(version: 2018_09_10_010652) do
     t.string "hair"
     t.string "weight"
     t.text "gear"
-    t.text "concept"
     t.text "description"
-    t.text "background"
-    t.text "race"
     t.text "history"
     t.text "crossroads"
     t.text "notes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+  end
+
+  create_table "concepts", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "character_id"
+  end
+
+  create_table "prowesses", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "has_prowess_type"
+    t.integer "has_prowess_id"
+  end
+
+  create_table "races", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "character_id"
   end
 
   create_table "users", force: :cascade do |t|
