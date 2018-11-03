@@ -1,0 +1,67 @@
+<h1>Editing Concept</h1>
+
+<%= render 'form', concept: @concept %>
+
+<%= form_with(model: @prowess, local: true) do |form| %>
+  <% if @prowess.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prowess.errors.count, "error") %> prohibited this prowess from being saved:</h2>
+
+      <ul>
+      <% @prowess.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :has_prowess_type, :value => @concept.class.name %>
+  <%= form.hidden_field :has_prowess_id, :value => @concept.id %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+    <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end -%>
+
+
+<% @concept.prowesses.each do |prowess| -%>
+	<%= form_with(model: prowess, local: true) do |form| %>
+	  <% if prowess.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(prowess.errors.count, "error") %> prohibited this prowess from being saved:</h2>
+
+	      <ul>
+	      <% prowess.errors.full_messages.each do |message| %>
+	        <li><%= message %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+
+	  <div class="field">
+	    <%= form.label :title %>
+	    <%= form.text_field :title %>
+	  </div>
+
+	  <div class="field">
+	    <%= form.label :description %>
+	    <%= form.text_field :description %>
+	  </div>
+	    <div class="actions">
+	    <%= form.submit %>
+	  </div>
+	<% end -%>
+<% end -%>
+
+
+<%= link_to 'Show', @concept %> |
+<%= link_to 'Back', concepts_path %>

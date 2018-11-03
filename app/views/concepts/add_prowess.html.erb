@@ -1,0 +1,33 @@
+<%= form_with(model: concept, local: true) do |form| %>
+  <% if concept.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(concept.errors.count, "error") %> prohibited this concept from being saved:</h2>
+
+      <ul>
+      <% concept.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.fields_for :prowess do |prowess| %> 
+      <div class="field">
+        <%= prowess.label :title %>
+        <%= prowess.text_field :title %>
+      </div>
+      <div class="field">
+        <%= prowess.label :desciption %>  
+        <%= prowess.text_area :desciption %> 
+      </div>
+    <% end %>
+
+    <div><%= f.submit "Create Prowess" %></div>
+  </div>
+  
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

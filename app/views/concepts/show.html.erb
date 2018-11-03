@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @concept.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @concept.description %>
+</p>
+
+<table>
+	<tr>
+		<th>Prowess</th>
+		<th>Description</th>
+	</tr>
+	<% @concept.prowesses.each do |prowess| -%>
+		<tr>
+			<td><%= prowess.title %></td>
+			<td><%= prowess.description %></td>
+		</tr>
+	<% end -%>
+</table>
+
+
+<%= link_to 'Edit', edit_concept_path(@concept) %> |
+<%= link_to 'Back', concepts_path %>

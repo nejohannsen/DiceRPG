@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @prowess.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @prowess.description %>
+</p>
+
+<%= link_to 'Edit', edit_prowess_path(@prowess) %> |
+<%= link_to 'Back', prowesses_path %>
