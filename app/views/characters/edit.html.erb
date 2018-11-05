@@ -87,9 +87,17 @@
       </div>
       <div class="row" style="background-color: #FBD9B9; height: 60%; margin-top: 4%;">
         <div class="col-sm-12">
-          <div class="row">
-            <div class="col-sm-12"><h3>History</h3>
-              <%= @character.history %>
+          <div class="row " style="height: 10%;">
+            <div class="col-sm-9">
+              <h3>History</h3>
+            </div>
+            <div class="col-sm-3">
+              <a href="#" data-toggle="modal" data-target="#editHistory">Edit History</a>
+            </div>
+          </div>
+          <div class="row" style="height: 90%;">
+            <div class="col-sm-12" style="overflow: scroll;">
+              <%= truncate(@character.history, length: 25000) %>
             </div>
           </div>
         </div>
@@ -571,6 +579,47 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="editHistory" tabindex="-1" role="dialog" aria-labelledby="editHistoryLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <%= form_with(model: @character, local: true) do |form| %>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit <%= @character.character_name %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <% if @character.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(c@haracter.errors.count, "error") %> prohibited this character from being saved:</h2>
+
+              <ul>
+              <% @character.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="field">
+                <%= form.text_area :history, :size => "55%x25%" %>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= form.submit %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
 <!--MainConcept-->
 <div class="modal fade" id="editConcept" tabindex="-1" role="dialog" aria-labelledby="editConceptLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -629,6 +678,7 @@
     </div>
   </div>
 </div>
+
 <!--Concept Prowess-->
 <div class="modal fade" id="addProwessToConcept" tabindex="-1" role="dialog" aria-labelledby="addProwessToConceptLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
