@@ -386,7 +386,7 @@
             </div>
           </div>
           <div class="row px-1">
-            <h4><a href="#" data-toggle="modal" data-target="#editBackground"><%= @character.background.title.nil? ? "Your Character's Background Title" : @character.background.description %></a></h4>
+            <h4><a href="#" data-toggle="modal" data-target="#editBackground"><%= @character.background.title.nil? ? "Your Character's Background Title" : @character.background.title %></a></h4>
           </div>
           <div class="row px-1" style="padding-left: 3%; border-bottom: 1px solid #dee2e6;">
             <%= @character.background.description.nil? ? "Your Character's Background Description" : @character.background.description %>
@@ -438,7 +438,7 @@
             </div>
           </div>
           <div class="row px-1">
-            <h4><a href="#" data-toggle="modal" data-target="#editBackground"><%= @character.race.title.nil? ? "Your Character's Race Title" : @character.race.description %></a></h4>
+            <h4><a href="#" data-toggle="modal" data-target="#editRace"><%= @character.race.title.nil? ? "Your Character's Race Title" : @character.race.title %></a></h4>
           </div>
           <div class="row px-1" style="padding-left: 3%; border-bottom: 1px solid #dee2e6;">
             <%= @character.race.description.nil? ? "Your Character's Race Description" : @character.race.description %>
@@ -482,93 +482,93 @@
 <div class="modal fade" id="editBaseCharater" tabindex="-1" role="dialog" aria-labelledby="editBaseCharacterLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-		<%= form_with(model: @character, local: true) do |form| %>
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit <%= @character.character_name %></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-  		  <% if @character.errors.any? %>
-  		    <div id="error_explanation">
-  		      <h2><%= pluralize(c@haracter.errors.count, "error") %> prohibited this character from being saved:</h2>
-
-  		      <ul>
-  		      <% @character.errors.full_messages.each do |message| %>
-  		        <li><%= message %></li>
-  		      <% end %>
-  		      </ul>
-  		    </div>
-  		  <% end %>
-  		  <div class="row">
-  		  	<div class="col-sm-6">
-  		  		<div class="field">
-  		    		<%= form.label :character_name %>
-  		    		<%= form.text_field :character_name %>
-  		  		</div>
-	  	    </div>
-          <div class="col-sm-6">
-  		  		<div class="field">
-  		    		<%= form.label :player_name %>
-  		    		<%= form.text_field :player_name %>
-  		  		</div>
-          </div>
+  		<%= form_with(model: @character, local: true) do |form| %>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit <%= @character.character_name %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-  		  <div class="row">
-  		  	<div class="col-sm-12">
-  		  		<div class="field">
-  		    		<%= form.label :description %>
-  		    		<br />
-  		    		<%= form.text_area :description, style: "width: 100%;"%>
-  		  		</div>
-  		  	</div>
-  		  </div>
-  		  <div class="row pb-2">
-  		  	
-  		  	<div class="col-sm-6">
-  	  			<div class="field">
-  				    <%= form.label :eyes %>
-  				    <br />
-  				    <%= form.text_field :eyes, style: "width: 100%;" %>
-  			  	</div>
-  			  	<div class="field">
-  				    <%= form.label :hair %>
-  				    <br />
-  				    <%= form.text_field :hair, style: "width: 100%;" %>
-  			  	</div>
-  			  	<div class="field">
-    			    <%= form.label :gender %>
-    			    <br />
-    			    <%= form.text_field :gender, style: "width: 100%;" %>
-            </div>
-  			  </div>
+        <div class="modal-body">
+    		  <% if @character.errors.any? %>
+    		    <div id="error_explanation">
+    		      <h2><%= pluralize(c@haracter.errors.count, "error") %> prohibited this character from being saved:</h2>
 
-  		  	</div>
-  		  	<div class="col-sm-6">
-  		  		<div class="field">
-    			    <%= form.label :age%>
-    			    <br />
-    			    <%= form.text_field :age, style: "width: 100%;" %>
+    		      <ul>
+    		      <% @character.errors.full_messages.each do |message| %>
+    		        <li><%= message %></li>
+    		      <% end %>
+    		      </ul>
+    		    </div>
+    		  <% end %>
+    		  <div class="row">
+    		  	<div class="col-sm-6">
+    		  		<div class="field">
+    		    		<%= form.label :character_name %>
+    		    		<%= form.text_field :character_name %>
+    		  		</div>
+  	  	    </div>
+            <div class="col-sm-6">
+    		  		<div class="field">
+    		    		<%= form.label :player_name %>
+    		    		<%= form.text_field :player_name %>
+    		  		</div>
             </div>
-            <div class="field">
-              <%= form.label :height %>
-              <br />
-              <%= form.text_field :height, style: "width: 100%;" %>
-            </div>
-            <div class="field">
-              <%= form.label :weight %>
-              <br />
-              <%= form.text_field :weight, style: "width: 100%;" %>
-            </div>
-  			  </div>
+          </div>
+    		  <div class="row">
+    		  	<div class="col-sm-12">
+    		  		<div class="field">
+    		    		<%= form.label :description %>
+    		    		<br />
+    		    		<%= form.text_area :description, style: "width: 100%;"%>
+    		  		</div>
+    		  	</div>
+    		  </div>
+    		  <div class="row pb-2">
+    		  	
+    		  	<div class="col-sm-6">
+    	  			<div class="field">
+    				    <%= form.label :eyes %>
+    				    <br />
+    				    <%= form.text_field :eyes, style: "width: 100%;" %>
+    			  	</div>
+    			  	<div class="field">
+    				    <%= form.label :hair %>
+    				    <br />
+    				    <%= form.text_field :hair, style: "width: 100%;" %>
+    			  	</div>
+    			  	<div class="field">
+      			    <%= form.label :gender %>
+      			    <br />
+      			    <%= form.text_field :gender, style: "width: 100%;" %>
+              </div>
+    			  </div>
+
+    		  	</div>
+    		  	<div class="col-sm-6">
+    		  		<div class="field">
+      			    <%= form.label :age%>
+      			    <br />
+      			    <%= form.text_field :age, style: "width: 100%;" %>
+              </div>
+              <div class="field">
+                <%= form.label :height %>
+                <br />
+                <%= form.text_field :height, style: "width: 100%;" %>
+              </div>
+              <div class="field">
+                <%= form.label :weight %>
+                <br />
+                <%= form.text_field :weight, style: "width: 100%;" %>
+              </div>
+    			  </div>
   	  	</div>
-		  </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <%= form.submit %>
-      </div>
-    <% end %>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= form.submit %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 <!--MainConcept-->

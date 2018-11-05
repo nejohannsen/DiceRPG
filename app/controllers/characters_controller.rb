@@ -15,10 +15,17 @@ class CharactersController < ApplicationController
   # GET /characters/new
   def new
     @character = Character.new
+    @character.user = current_user
+    @character.concept = Concept.new
+    @character.race = Race.new
+    @character.background = Background.new
+    @character.save
+    redirect_to edit_character_path(@character), notice: 'Character was successfully created.'
   end
 
   # GET /characters/1/edit
   def edit
+    authorize! :update, @character
     @conceptProwess = Prowess.new
     @raceProwess = Prowess.new
     @backgroundProwess = Prowess.new
@@ -28,6 +35,7 @@ class CharactersController < ApplicationController
   # POST /characters.json
   def create
     @character = Character.new(character_params)
+    authorize! :create, @character
 
     respond_to do |format|
       if @character.save
@@ -43,9 +51,10 @@ class CharactersController < ApplicationController
   # PATCH/PUT /characters/1
   # PATCH/PUT /characters/1.json
   def update
+    authorize! :update, @character
     respond_to do |format|
       if @character.update(character_params)
-        format.html { redirect_to @character, notice: 'Character was successfully updated.' }
+        format.html { redirect_to edit_character_path(@character), notice: 'Character was successfully updated.' }
         format.json { render :show, status: :ok, location: @character }
       else
         format.html { render :edit }
@@ -57,6 +66,7 @@ class CharactersController < ApplicationController
   # DELETE /characters/1
   # DELETE /characters/1.json
   def destroy
+    authorize! :update, @character
     @character.destroy
     respond_to do |format|
       format.html { redirect_to characters_url, notice: 'Character was successfully destroyed.' }
