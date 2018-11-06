@@ -227,10 +227,10 @@
             </div>
           </div>
           <div class="row px-1">
-            <div class="col-sm-12">
+            <div class="col-sm-12" style="overflow: scroll;">
               <%- if (!@character.concept.nil?) -%>
                 <%- @character.concept.prowesses.each do |prowess| -%>
-                  <div class="row"  style="overflow: scroll;">
+                  <div class="row">
                   <a href="#" data-toggle="modal" data-target="#editProwess<%=prowess.id%>"><%= prowess.title %>:</a>
                   &nbsp;  
                   <%= prowess.description %>
@@ -408,10 +408,10 @@
             </div>
           </div>
           <div class="row px-1">
-            <div class="col-sm-12">
+            <div class="col-sm-12" style="overflow: scroll;">
               <%- if (!@character.background.nil?) -%>
                 <%- @character.background.prowesses.each do |prowess| -%>
-                  <div class="row"  style="overflow: scroll;">
+                  <div class="row">
                   <a href="#" data-toggle="modal" data-target="#editProwess<%=prowess.id%>"><%= prowess.title %>:</a>
                   &nbsp;  
                   <%= prowess.description %>
@@ -460,10 +460,10 @@
             </div>
           </div>
           <div class="row px-1">
-            <div class="col-sm-12">
+            <div class="col-sm-12" style="overflow: scroll;">
               <%- if (!@character.race.nil?) -%>
                 <%- @character.race.prowesses.each do |prowess| -%>
-                  <div class="row" style="overflow: scroll;">
+                  <div class="row" >
                   <a href="#" data-toggle="modal" data-target="#editProwess<%=prowess.id%>"><%= prowess.title %>:</a>
                   &nbsp;  
                   <%= prowess.description %>
