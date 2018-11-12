@@ -191,7 +191,7 @@
       </div>
       <div class="row" style="background-color: #d8abab; height: 40%; margin-top: 3%">
         <div class="col-sm-12">
-          <div class="row px-1" style="border-bottom: 1px solid #dee2e6;">
+          <div class="row px-1" style="border-bottom: 1px solid #dee2e6; height: 10%">
             <div class="col-sm-3">
               <h3>Concept:</h3>
             </div>
@@ -212,13 +212,13 @@
               </div>
             </div>
           </div>
-          <div class="row px-1">
-            <h4><a href="#" data-toggle="modal" data-target="#editConcept"><%= @character.concept.title.nil? ? "Your Character's Concept Description" : @character.concept.title %>:</a></h4>
+          <div class="row px-1" style="height: 10%;">
+            <h4><a href="#" data-toggle="modal" data-target="#editConcept"><%= @character.concept.title.nil? ? "Your Character's Concept Title" : @character.concept.title %>:</a></h4>
           </div>
-          <div class="row px-1" style="padding-left: 3%; border-bottom: 1px solid #dee2e6;">
+          <div class="row px-1" style="padding-left: 3%; border-bottom: 1px solid #dee2e6; height: 10%;">
             <%= @character.concept.description.nil? ? "Your Character's Concept Description" : @character.concept.description %>
           </div>
-          <div class="row px-1">
+          <div class="row px-1" style="height: 10%;">
             <div class="col-sm-6">
               <h5 class="p-0 m-0">Prowesses:</h5>
             </div>
@@ -226,8 +226,8 @@
               <a href="#" data-toggle="modal" data-target="#addProwessToConcept">Add prowess</a>
             </div>
           </div>
-          <div class="row px-1">
-            <div class="col-sm-12" style="overflow: scroll;">
+          <div class="row px-1" style="overflow-x: scroll; height: 60%">
+            <div class="col-sm-12" style="overflow-x: scroll;">
               <%- if (!@character.concept.nil?) -%>
                 <%- @character.concept.prowesses.each do |prowess| -%>
                   <div class="row">
@@ -372,7 +372,7 @@
       </div>
       <div class="row" style="background-color: #d8abab; height: 40%; margin-top: 3%">
         <div class="col-sm-12">
-          <div class="row px-1" style="border-bottom: 1px solid #dee2e6;">
+          <div class="row px-1" style="border-bottom: 1px solid #dee2e6; height: 10%;">
             <div class="col-sm-3">
               <h3>Background</h3>
             </div>
@@ -393,21 +393,21 @@
               </div>
             </div>
           </div>
-          <div class="row px-1">
+          <div class="row px-1" style="height: 10%;">
             <h4><a href="#" data-toggle="modal" data-target="#editBackground"><%= @character.background.title.nil? ? "Your Character's Background Title" : @character.background.title %></a></h4>
           </div>
-          <div class="row px-1" style="padding-left: 3%; border-bottom: 1px solid #dee2e6;">
+          <div class="row px-1" style="padding-left: 3%; border-bottom: 1px solid #dee2e6; height: 10%;">
             <%= @character.background.description.nil? ? "Your Character's Background Description" : @character.background.description %>
           </div>
-          <div class="row px-1">
+          <div class="row px-1" style="height: 10%;">
             <div class="col-sm-6">
               <h5 class="p-0 m-0">Prowesses:</h5>
             </div>
             <div class="offset-sm-3 col-sm-3">
-              <a href="#" data-toggle="modal" data-target="#addProwessToConcept">Add prowess</a>
+              <a href="#" data-toggle="modal" data-target="#addProwessToBackground">Add prowess</a>
             </div>
           </div>
-          <div class="row px-1">
+          <div class="row px-1" style="height: 60%;">
             <div class="col-sm-12" style="overflow: scroll;">
               <%- if (!@character.background.nil?) -%>
                 <%- @character.background.prowesses.each do |prowess| -%>
@@ -424,7 +424,7 @@
       </div>
       <div class="row" style="background-color: #d8abab; height: 40%; margin-top: 3%">
         <div class="col-sm-12">
-          <div class="row px-1" style="border-bottom: 1px solid #dee2e6;">
+          <div class="row px-1" style="border-bottom: 1px solid #dee2e6; height: 10%;">
             <div class="col-sm-3">
               <h3>Race</h3>
             </div>
@@ -445,21 +445,21 @@
               </div>
             </div>
           </div>
-          <div class="row px-1">
+          <div class="row px-1" style="height: 10%;">
             <h4><a href="#" data-toggle="modal" data-target="#editRace"><%= @character.race.title.nil? ? "Your Character's Race Title" : @character.race.title %></a></h4>
           </div>
-          <div class="row px-1" style="padding-left: 3%; border-bottom: 1px solid #dee2e6;">
+          <div class="row px-1" style="padding-left: 3%; border-bottom: 1px solid #dee2e6; height: 10%;">
             <%= @character.race.description.nil? ? "Your Character's Race Description" : @character.race.description %>
           </div>
-          <div class="row px-1">
+          <div class="row px-1" style="height: 10%;">
             <div class="col-sm-6">
               <h5 class="p-0 m-0">Prowesses:</h5>
             </div>
             <div class="offset-sm-3 col-sm-3">
-              <a href="#" data-toggle="modal" data-target="#addProwessToConcept">Add prowess</a>
+              <a href="#" data-toggle="modal" data-target="#addProwessToRace">Add prowess</a>
             </div>
           </div>
-          <div class="row px-1">
+          <div class="row px-1" style="height: 60%;">
             <div class="col-sm-12" style="overflow: scroll;">
               <%- if (!@character.race.nil?) -%>
                 <%- @character.race.prowesses.each do |prowess| -%>
@@ -822,8 +822,8 @@
               </ul>
             </div>
           <% end %>
-          <%= form.hidden_field :has_prowess_type, :value => @character.background.class.name %>
-          <%= form.hidden_field :has_prowess_id, :value => @character.background.id %>
+          <%= form.hidden_field :has_prowess_type %>
+          <%= form.hidden_field :has_prowess_id %>
 
           <div class="row">
             <div class="col-sm-3">

@@ -26,9 +26,9 @@ class CharactersController < ApplicationController
   # GET /characters/1/edit
   def edit
     authorize! :update, @character
-    @conceptProwess = Prowess.new
-    @raceProwess = Prowess.new
-    @backgroundProwess = Prowess.new
+    @conceptProwess = Prowess.new(:has_prowess => @character.concept)
+    @raceProwess = Prowess.new(:has_prowess => @character.race)
+    @backgroundProwess = Prowess.new(:has_prowess => @character.background)
   end
 
   # POST /characters

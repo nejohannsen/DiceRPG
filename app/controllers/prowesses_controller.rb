@@ -25,7 +25,7 @@ class ProwessesController < ApplicationController
   # POST /prowesses.json
   def create
     @prowess = Prowess.new(prowess_params)
-
+    puts @prowess
     respond_to do |format|
       if @prowess.save
         format.html { redirect_to edit_character_path(@prowess.has_prowess.character), notice: 'Prowess was successfully created.' }
