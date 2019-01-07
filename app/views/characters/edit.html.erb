@@ -6,16 +6,64 @@
       <div class="row" style="height: 60%; margin-top: 1%;">
         <div class="col-sm-12 border h-100">
           <div class="row">
-            <div class="col-sm-12"><h3>Notes</h3>
-              <%= @character.notes %>
+            <div class="col-sm-8">
+              <h3>Notes</h3>
+            </div>
+            <div class="col-sm-4">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addNote">
+                Add Note
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12" style="overflow: scroll;">
+              <%- if (!@character.notes.nil?) -%>
+                <%- @character.notes.each do |note| -%>
+                  <div class="row" >
+                  <a href="#" data-toggle="modal" data-target="#editNote<%=note.id%>"><%= note.date %>:</a>
+                  &nbsp;  
+                  <%= note.text %>
+                </div>
+                <% end %>
+              <% end %> 
             </div>
           </div>
         </div>
       </div>
       <div class="row" style="background-color: #efe3c4; height: 35%; margin-top: 4%;">
         <div class="col-sm-12">
-          <strong>Gear:</strong>
-          <%= @character.gear %>
+          <div class="row">
+            <div class="col-sm-8">
+              <strong>equipment:</strong>
+            </div>
+            <div class="col-sm-4">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addGear">
+                Add Gear
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <%- if (!@character.equipment.nil?) -%>
+                <table>
+                  <tr>
+                    <th>Name</th>
+                    <th>Weight</th>
+                    <th>Worth</th>
+                    <th>Properties</th>
+                  </tr>
+                  <%- @character.equipment.each do |equipment| -%>
+                    <tr>
+                      <td><a href="#" data-toggle="modal" data-target="#editGear<%=equipment.id%>"><%= equipment.name %></a></td>
+                      <td><%= equipment.weight %></td>
+                      <td><%= equipment.worth %></td>
+                      <td><%= equipment.properties %></td>
+                    </tr>
+                  <% end %>
+                </table>
+              <% end %> 
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -57,7 +105,6 @@
               <%= @character.weight %>
             </div>
           </div>
-          
         </div>
         <div class="col-sm-8 border">
           <div class="row">
@@ -79,8 +126,8 @@
           <div class="row" style="height: 15%">
             <div class="col-sm-12 border">
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editBaseCharater">
-  				Edit Charcter Details
-				</button>
+  				      Edit Charcter Details
+				      </button>
             </div>
           </div>
         </div>
@@ -860,6 +907,296 @@
     </div>
   </div>
 </div>
+
+<!--Gear-->
+<div class="modal fade" id="addGear" tabindex="-1" role="dialog" aria-labelledby="addGearLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <%= form_with(model: @newGear, local: true) do |form| %>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add a peice of Gear</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <% if @newGear.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@newGear.errors.count, "error") %> prohibited this character from being saved:</h2>
+
+              <ul>
+              <% @newGear.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <%= form.hidden_field :character_id %>
+
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="field">
+                <%= form.label :name %>
+              </div>
+            </div>
+            <div class="col-sm-9">
+              <div class="field">
+                <%= form.text_field :name, style: "width: 100%;" %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="field">
+                <%= form.label :weight %>
+              </div>
+            </div>
+            <div class="col-sm-9">
+              <div class="field">
+                <%= form.text_field :weight, style: "width: 100%;" %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="field">
+                <%= form.label :worth %>
+              </div>
+            </div>
+            <div class="col-sm-9">
+              <div class="field">
+                <%= form.text_field :worth, style: "width: 100%;" %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="field">
+                <%= form.label :description %>
+              </div>
+            </div>
+          </div>
+          <div class="row>">
+            <div class="col-sm-12">
+              <div class="field">
+                <%= form.text_field :description, style: "width: 100%;" %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= form.submit %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%- @character.equipment.each do |gear| -%>
+  <div class="modal fade" id="editGear<%=gear.id%>" tabindex="-1" role="dialog" aria-labelledby="editGearLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <%= form_with(model: gear, local: true) do |form| %>
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit <%= gear.name%></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <% if gear.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(gear.errors.count, "error") %> prohibited this prowess from being saved:</h2>
+
+                <ul>
+                <% gear.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+             <div class="row">
+            <div class="col-sm-3">
+              <div class="field">
+                <%= form.label :name %>
+              </div>
+            </div>
+            <div class="col-sm-9">
+              <div class="field">
+                <%= form.text_field :name, style: "width: 100%;" %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="field">
+                <%= form.label :weight %>
+              </div>
+            </div>
+            <div class="col-sm-9">
+              <div class="field">
+                <%= form.text_field :weight, style: "width: 100%;" %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="field">
+                <%= form.label :worth %>
+              </div>
+            </div>
+            <div class="col-sm-9">
+              <div class="field">
+                <%= form.text_field :worth, style: "width: 100%;" %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="field">
+                <%= form.label :description %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="field">
+                <%= form.text_field :description, style: "width: 100%;" %>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <%= link_to 'Destroy', gear, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger"  %>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <%= form.submit %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end -%>
+
+<!--Notes-->
+<div class="modal fade" id="addNote" tabindex="-1" role="dialog" aria-labelledby="addNoteLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <%= form_with(model: @newNote, local: true) do |form| %>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add a Note</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <% if @newNote.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@newNote.errors.count, "error") %> prohibited this character from being saved:</h2>
+
+              <ul>
+              <% @newNote.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <%= form.hidden_field :character_id %>
+
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="field">
+                <%= form.label :date %>
+              </div>
+            </div>
+            <div class="col-sm-9">
+              <div class="field">
+                <%= form.text_field :date, style: "width: 100%;" %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="field">
+                <%= form.label :text %>
+              </div>
+            </div>
+          </div>
+          <div class="row>">
+            <div class="col-sm-12">
+              <div class="field">
+                <%= form.text_field :text, style: "width: 100%;" %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= form.submit %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%- @character.notes.each do |note| -%>
+  <div class="modal fade" id="editNote<%=note.id%>" tabindex="-1" role="dialog" aria-labelledby="editNoteLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <%= form_with(model: note, local: true) do |form| %>
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit <%= note.date%></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <% if note.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(note.errors.count, "error") %> prohibited this prowess from being saved:</h2>
+
+                <ul>
+                <% note.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="field">
+                  <%= form.label :date %>
+                </div>
+              </div>
+              <div class="col-sm-9">
+                <div class="field">
+                  <%= form.text_field :date, style: "width: 100%;" %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="field">
+                  <%= form.label :text %>
+                </div>
+              </div>
+            </div>
+            <div class="row>">
+              <div class="col-sm-12">
+                <div class="field">
+                  <%= form.text_field :text, style: "width: 100%;" %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger"  %>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <%= form.submit %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end -%>
+
 <!--MainRace-->
 <div class="modal fade" id="editRace" tabindex="-1" role="dialog" aria-labelledby="editRaceLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

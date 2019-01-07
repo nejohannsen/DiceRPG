@@ -1,0 +1,2 @@
+module EquipmentControllersHelper
+end

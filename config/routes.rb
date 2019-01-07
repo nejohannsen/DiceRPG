@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :races
   resources :concepts
   resources :prowesses
+  resources :notes
+  resources :equipment
+  resources :crossroads
   devise_for :users
 	root 'welcome#index'
   	resources :characters

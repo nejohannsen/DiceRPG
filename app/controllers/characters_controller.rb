@@ -29,12 +29,15 @@ class CharactersController < ApplicationController
     @conceptProwess = Prowess.new(:has_prowess => @character.concept)
     @raceProwess = Prowess.new(:has_prowess => @character.race)
     @backgroundProwess = Prowess.new(:has_prowess => @character.background)
+    @newNote = Note.new(:character => @character)
+    @newGear = Equipment.new(:character => @character)
   end
 
   # POST /characters
   # POST /characters.json
   def create
     @character = Character.new(character_params)
+    puts @character
     authorize! :create, @character
 
     respond_to do |format|
